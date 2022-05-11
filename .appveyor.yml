@@ -9,4 +9,4 @@ install:
 build_script:
   - chmod +x gradlew
   - ./gradlew test --info
-  - ./gradlew jar --stacktrace
+  
