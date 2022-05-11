@@ -22,11 +22,11 @@ public class TestClass {
     @BeforeAll
     public static void setUp() {
         System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--disable-dev-shm-usage");
-//        options.addArguments("--no-sandbox");
-//        options.addArguments("--headless");
-//        driver = new ChromeDriver(options);
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
     }
 
     @BeforeEach
