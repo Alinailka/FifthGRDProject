@@ -8,5 +8,5 @@ install:
   - java -jar src/test/java/artifacts/app-order.jar &
 build_script:
   - chmod +x gradlew
+  - chmod 755 /driver/win/chromedriver
   - ./gradlew test --info
-  
