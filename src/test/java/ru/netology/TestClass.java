@@ -31,10 +31,10 @@ public class TestClass {
         driver = new ChromeDriver(options);
     }
 
-    @BeforeEach
-    public void setUp2() {
-        driver = new ChromeDriver();
-    }
+//    @BeforeEach
+//    public void setUp2() {
+//        driver = new ChromeDriver();
+//    }
 
     @AfterEach
     public void close() {
