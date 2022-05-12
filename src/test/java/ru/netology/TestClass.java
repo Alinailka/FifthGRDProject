@@ -28,7 +28,6 @@ public class TestClass {
     @BeforeEach
     public void setUp() {
 
-        //System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
@@ -36,27 +35,11 @@ public class TestClass {
         driver = new ChromeDriver(options);
     }
 
-//    @BeforeEach
-//    public void setUp2() {
-//        driver = new ChromeDriver();
-//    }
-
     @AfterEach
     public void close() {
         driver.quit();
         driver = null;
     }
-
-
-//    @BeforeEach
-//    void setUp3() {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--disable-dev-shm-usage");
-//        options.addArguments("--no-sandbox");
-//        options.addArguments("--headless");
-//        driver = new ChromeDriver(options);
-//        driver.get("http://localhost:9999");
-//    }
 
     @Test
     public void test() {
