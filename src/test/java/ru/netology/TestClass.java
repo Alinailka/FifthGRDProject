@@ -21,11 +21,6 @@ public class TestClass {
     private static WebDriver driver;
 
     @BeforeAll
-    static void setupClass() {
-        WebDriverManager.chromedriver().setup();
-    }
-
-    @BeforeAll
     public static void setUp() {
 
         System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
@@ -45,6 +40,10 @@ public class TestClass {
     public void close() {
         driver.quit();
         driver = null;
+    }
+    @BeforeAll
+    static void setupClass() {
+        WebDriverManager.chromedriver().setup();
     }
 
     @Test
