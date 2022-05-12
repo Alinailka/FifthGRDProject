@@ -41,9 +41,20 @@ public class TestClass {
         driver.quit();
         driver = null;
     }
+
     @BeforeAll
     static void setupClass() {
         WebDriverManager.chromedriver().setup();
+    }
+
+    @BeforeEach
+    void setUp3() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
+        driver.get("http://localhost:9999");
     }
 
     @Test
