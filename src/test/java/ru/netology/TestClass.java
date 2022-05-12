@@ -18,12 +18,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestClass {
 
-    private static WebDriver driver;
+    private WebDriver driver;
 
     @BeforeAll
-    public static void setUp() {
+    static void setupClass() {
+        WebDriverManager.chromedriver().setup();
+    }
 
-        System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
+    @BeforeEach
+    public void setUp() {
+
+        //System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
@@ -42,20 +47,16 @@ public class TestClass {
         driver = null;
     }
 
-    @BeforeAll
-    static void setupClass() {
-        WebDriverManager.chromedriver().setup();
-    }
 
-    @BeforeEach
-    void setUp3() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
-        driver.get("http://localhost:9999");
-    }
+//    @BeforeEach
+//    void setUp3() {
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--disable-dev-shm-usage");
+//        options.addArguments("--no-sandbox");
+//        options.addArguments("--headless");
+//        driver = new ChromeDriver(options);
+//        driver.get("http://localhost:9999");
+//    }
 
     @Test
     public void test() {
