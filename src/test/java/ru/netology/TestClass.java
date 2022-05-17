@@ -45,10 +45,10 @@ public class TestClass {
     public void test() {
         driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[type=text]")).sendKeys("Робертс Джулия");
-        driver.findElement(By.cssSelector("[type =tel]")).sendKeys("+79888888888");
+        driver.findElement(By.cssSelector("[type=tel]")).sendKeys("+79888888888");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.cssSelector("[type=button]")).click();
-        String text = driver.findElement(By.className("paragraph_theme_alfa-on-white")).getText();
+        String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.",
                 text.trim());
     }

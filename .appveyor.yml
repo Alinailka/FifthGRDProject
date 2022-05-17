@@ -5,7 +5,7 @@ branches:
     - nano
 build: off
 install:
-  - java -jar src/test/java/artifacts/app-order.jar &
+  - java -jar artifacts/app-order.jar &
 build_script:
   - chmod +x gradlew
   - ./gradlew test --info
